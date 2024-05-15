@@ -30,6 +30,19 @@ body {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
+.matchSelection{
+    display:flex;
+    margin:1px;
+    justify-content: center;
+    gap:10px;
+}
+.customMatch{
+    background-color: whitesmoke;
+    border: 0.1px solid grey;
+}
+.matchInput{
+    max-width:40px;
+}
 
 .cardBox{
     display:flex;
@@ -38,6 +51,7 @@ body {
 }
 
 .card{
+    cursor:pointer;
     line-height: 50px;
     width: 150px;
     height: 200px;
