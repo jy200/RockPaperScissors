@@ -11,6 +11,14 @@ const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const resultText = document.getElementById('gameResult');
+const winText = document.getElementById('win');
+const loseText = document.getElementById('lose');
+const drawText = document.getElementById('draw');
+const rPlayedText = document.getElementById('rockPlayed');
+const pPlayedText = document.getElementById('paperPlayed');
+const sPlayedText = document.getElementById('scissorsPlayed');
+const enemyPlayed = document.querySelector('.opponentHand');
+const youPlayed = document.querySelector('.myHand');
 
 // Best of 1/3/5/10 buttons
 btns.forEach(btn => {
@@ -33,7 +41,7 @@ custom.addEventListener('click', ()=>{
         if (confirm("Best of "+ customNumber.value + "?")){
             const btnScore = customNumber.value;
             score.textContent = `0/${btnScore}`;
-            newGame();
+            newGame(btnScore);
         };
     };
 });
@@ -46,11 +54,9 @@ function newGame(total){
     rockPlayed = 0, paperPlayed = 0, scissorsPlayed = 0;
     defeats = 0, wins = 0, draws = 0;
     enemyHand = '';
-    resultText.textContent = "Result: "
+    // resultText.textContent = "Result: "
 };
 
-// Prevent double click from highlighting text
-// document.addEventListener('mousedown', function(e){ e.preventDefault(); }, false);
 
 rock.addEventListener('click', () => useCard(rock));
 paper.addEventListener('click', ()=> useCard(paper));
@@ -62,6 +68,7 @@ function useCard(card){
     }
     enemyHand = opponentPlays();
     const hand = card.id;
+    youPlayed.textContent = "You Played: " + hand.toUpperCase();
     if (hand === 'rock'){
         rockPlayed += 1;
         if (enemyHand === 'rock'){
@@ -110,14 +117,6 @@ function opponentPlays(){
 };
 
 function updateGame(){
-    const winText = document.getElementById('win');
-    const loseText = document.getElementById('lose');
-    const drawText = document.getElementById('draw');
-    const rPlayedText = document.getElementById('rockPlayed');
-    const pPlayedText = document.getElementById('paperPlayed');
-    const sPlayedText = document.getElementById('scissorsPlayed');
-    const enemyPlayed = document.querySelector('.opponentHand');
-
     enemyPlayed.textContent = "Opponent Played: " + enemyHand.toUpperCase();
     winText.textContent = "Win: "+wins;
     loseText.textContent = "Lose: "+defeats;
@@ -138,6 +137,6 @@ function updateGame(){
         }else{
             rText = "IT'S A DRAW";
         }
-        resultText.textContent = "Result: "+rText
-    }
-}
+        score.textContent = rText;
+    };
+};
