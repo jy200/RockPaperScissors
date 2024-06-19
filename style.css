@@ -1,99 +1,135 @@
 body {
     margin: 0px;
-}
- 
-.pattern {
-    background-size: 50px 50px;
-    background-color: #0ae;
-    background-image: -webkit-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-    background-image: -moz-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-    background-image: -ms-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-    background-image: -o-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
-    background-image: linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    min-height: 100vh;
+    width:100%;
+    /* overflow: hidden; */
+    background-color: #1a1a1a;
+    background: radial-gradient(circle at center, #5f57fa 0%, #0a5261 100%);
+    font-family: "Poppins", sans-serif;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .title {
     text-align: center;
-    font-weight: 900;
-    font-size: 50px;
-    background-image: linear-gradient(to left, #8e2424, #ff2828);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+    color: #ffcd9f;
+    width: max-content;
+    font-size: 26px;
+    padding:20px;
+    text-shadow: 0.07em 0 rgba(0, 0, 0, 0.7), 0 0.07em rgba(0, 0, 0, 0.7),
+    -0.07em 0 rgba(0, 0, 0, 0.7), 0 -0.07em rgba(0, 0, 0, 0.7);
+    margin: 10px 0 10px 0;
 }
-
+.title h1{
+    border-bottom: 0.5rem solid #fa5f57;
+}
 .scoreboard{
     text-align: center;
     font-size: 35px;
-    color:white;
-    margin-bottom: 3rem;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
+    color:rgb(255, 255, 255);
+    text-shadow: 0.07em 0 rgba(0, 0, 0, 0.7), 0 0.07em rgba(0, 0, 0, 0.7),
+    -0.07em 0 rgba(0, 0, 0, 0.7), 0 -0.07em rgba(0, 0, 0, 0.7);
 }
 .matchSelection{
+    text-shadow: none;
     display:flex;
-    margin:1px;
+    align-items: center;
     justify-content: center;
     gap:10px;
+    height: 70px;
+    width:100%;
 }
-.customMatch{
-    background-color: whitesmoke;
-    border: 0.1px solid grey;
+.matchSelection h6{
+    font-size: 30px;
 }
-.matchInput{
-    max-width:40px;
+.matchSelection button{
+    font-size: 18px;
+    width: 3rem;
+    background-color: #fa5f57;
+    color:white;
+    text-shadow: none;
+    border-style:none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+    cursor: pointer;
 }
-
+.match-cards-container{
+    display:flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10vh;
+}
+.match-card-container{
+    margin: 0 10px 0 10px;
+}
+.match-card-container h3{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5px;
+    color:white;
+}
 .cardBox{
     display:flex;
+    flex-direction: row;
     text-align: center;
-    justify-content: center;
+    justify-content: space-around;
+    margin-bottom: 10vh;
 }
-
 .card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor:pointer;
-    line-height: 50px;
+    border-style: solid;
+    font-weight: 600;
+    background-color: white;
+    color: black;
+    font-size: 22px;
+    user-select: none;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+    overflow:hidden;
+    margin: 0 10px 0 10px;
+}
+.card-back {
+    background: repeating-linear-gradient( 45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 25px);
+}
+.card-match{
+    width:190px;
+    height:260px;
+    max-width:35vw;
+    max-height:20vh;
+}
+.card-hand{
     width: 150px;
     height: 200px;
-    margin: 40px 40px;
-    border-style: solid;
-    font-weight: 900;
-    background-color: white;
-    color: white;
-    border-color: black;
-    font-size: 22px;
-    text-shadow:
-        0.05em 0 black,
-        0 0.05em black,
-        -0.05em 0 black,
-        0 -0.05em black,
-        -0.05em -0.05em black,
-        -0.05em 0.05em black,
-        0.05em -0.05em black,
-        0.05em 0.05em black;
-    background: repeating-linear-gradient( 45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 25px);
-    /* prevent blue doubleclick highlight */
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
+    max-width:25vw;
+    max-height:15vh;
 }
-
+.card-image{
+    display:flex;
+    object-fit: fill;
+    justify-content: center;
+    align-items: center;
+}
 .rockImage{
-    width:100px;
-    height:100px;
+    max-width:100%;
+    max-height:100%;
 }
 .paperImage{
-    width:100px;
-    height:100px;
+    max-width:100%;
+    max-height:80%;
 }
 .scissorsImage{
-    margin-top: 10px;
-    width:87px;
-    height:87px;
+    max-width:100%;
+    max-height:70%;
 }
-
 .myHand, .opponentHand{
     margin-left: 40px;
     font-weight: 900;
@@ -102,8 +138,33 @@ body {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .game-log{
+    display:flex;
+    font-size: 20px;
+    flex-direction: column;
+    padding:20px;
+    width:100%;
+    max-width: 600px;
     background-color: white;
-    margin-left: 40px;
-    margin-right: 40px;
     border: solid 0.1rem rgb(0, 0, 0);
+    margin-bottom: 10vh;
+}
+
+/* @media only screen and (min-width:1000px){
+    .container{
+    }
+} */
+@media (max-width: 800px){
+    .title{
+        font-size: 10px;
+    }
+    .matchSelection h6{
+        display: none;
+    }
+    .matchSelection button{
+        font-size: 14px;
+        width:30px;
+    }
+    .card{
+        font-size: 18px;
+    }
 }

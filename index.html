@@ -4,45 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
     <link href="style.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body class="pattern">
-    <div>
-        <h1 class="title">ROCK PAPER SCISSORS</h1>
-        <div class="scoreboard">
-            0/0
-        </div>
-        <div class="matchSelection">
-            <button>Best of 1</button>
-            <button>Best of 3</button>
-            <button>Best of 5</button>
-            <button>Best of 10</button>
-            <div class="customMatch">
-                Best of 
-                <input class="matchInput" type="number" value ="1" min="1" max="999"/>
-                <input id="customSubmit" type="submit" />
+    <div class="container">
+        <div class="title">
+            <h1 >ULTIMATE ROCK PAPER SCISSORS</h1>
+            <div class="scoreboard">
+                0/0
+            </div>
+            <div class="matchSelection">
+                <h6>Rounds</h6>
+                <button>1</button>
+                <button>3</button>
+                <button>5</button>
+                <button>10</button>
+                <button>15</button>
+                <button>20</button>
+                <button>25</button>
+                <button>50</button>
             </div>
         </div>
-        <div class="container cardBox">
-            <div id="rock" class="card">
+        <div class="match-cards-container">
+            <div class="match-card-container">
+                <h3>You</h3>
+                <div id="match-card-1" class="card card-back card-match"></div>
+            </div>
+            <div class="match-card-container">
+                <h3>Opponent</h3>
+                <div id="match-card-2" class="card card-back card-match"></div>
+            </div>
+        </div>
+
+        <div class="cardBox">
+            <div id="rock" class="card card-hand">
                 ROCK
-                <img class="rockImage" src="images/rock.png"/>
+                <div class="card-image">
+                    <img class="rockImage" src="images/rock.png"/>
+                </div>
             </div>
-            <div id="paper" class="card">
+            <div id="paper" class="card card-hand">
                 PAPER
-                <img class="paperImage" src="images/paper.png"/>
+                <div class="card-image"><img class="paperImage" src="images/paper.png"/></div>
             </div>
-            <div id="scissors" class="card">
+            <div id="scissors" class="card card-hand">
                 SCISSORS
-                <img class="scissorsImage" src="images/scissors.png"/>
+                <div class="card-image"><img class="scissorsImage" src="images/scissors.png"/></div>
             </div>
         </div>
-        <div class="myHand">
+        <!-- <div class="myHand">
             You Played:
         </div>
         <div class="opponentHand">
             Opponent Played:
-        </div>
+        </div> -->
         <div class="game-log">
             <div id="win">Win: 0</div>
             <div id="lose">Lose: 0</div>
