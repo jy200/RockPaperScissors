@@ -1,170 +1,212 @@
 body {
-    margin: 0px;
-    min-height: 100vh;
-    width:100%;
-    /* overflow: hidden; */
-    background-color: #1a1a1a;
-    background: radial-gradient(circle at center, #5f57fa 0%, #0a5261 100%);
-    font-family: "Poppins", sans-serif;
+  margin: 0px;
+  min-height: 100vh;
+  width: 100%;
+  /* overflow: hidden; */
+  background-color: #1a1a1a;
+  background: radial-gradient(circle at center, #5f57fa 0%, #0a5261 100%);
+  font-family: "Poppins", sans-serif;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .title {
-    text-align: center;
-    color: #ffcd9f;
-    width: max-content;
-    font-size: 26px;
-    padding:20px;
-    text-shadow: 0.07em 0 rgba(0, 0, 0, 0.7), 0 0.07em rgba(0, 0, 0, 0.7),
-    -0.07em 0 rgba(0, 0, 0, 0.7), 0 -0.07em rgba(0, 0, 0, 0.7);
-    margin: 10px 0 10px 0;
+  text-align: center;
+  color: #ffcd9f;
+  width: max-content;
+  font-size: 26px;
+  padding: 20px;
+  margin: 10px 0 10px 0;
 }
-.title h1{
-    border-bottom: 0.5rem solid #fa5f57;
+.title h1 {
+  border-bottom: 0.5rem solid #fa5f57;
 }
-.scoreboard{
-    text-align: center;
-    font-size: 35px;
-    color:rgb(255, 255, 255);
-    text-shadow: 0.07em 0 rgba(0, 0, 0, 0.7), 0 0.07em rgba(0, 0, 0, 0.7),
-    -0.07em 0 rgba(0, 0, 0, 0.7), 0 -0.07em rgba(0, 0, 0, 0.7);
+.scoreboard {
+  text-align: center;
+  font-size: 35px;
+  color: rgb(255, 255, 255);
 }
-.matchSelection{
-    text-shadow: none;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    gap:10px;
-    height: 70px;
-    width:100%;
+.matchSelection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 70px;
+  width: 100%;
 }
-.matchSelection h6{
-    font-size: 30px;
+.matchSelection h6 {
+  font-size: 30px;
 }
-.matchSelection button{
-    font-size: 18px;
-    width: 3rem;
-    background-color: #fa5f57;
-    color:white;
-    text-shadow: none;
-    border-style:none;
-    border-radius: 3px;
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
-    cursor: pointer;
+.matchSelection button {
+  font-size: 18px;
+  width: 3rem;
+  background-color: #fa5f57;
+  color: white;
+  border-style: none;
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 1);
+  cursor: pointer;
 }
-.match-cards-container{
-    display:flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 10vh;
+.match-cards-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10vh;
+  column-gap: 35vw;
 }
-.match-card-container{
-    margin: 0 10px 0 10px;
+.match-card-container {
+  margin: 0 10px 0 10px;
 }
-.match-card-container h3{
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 5px;
-    color:white;
+.match-card-container h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 5px;
+  color: white;
 }
-.cardBox{
-    display:flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: space-around;
-    margin-bottom: 10vh;
+.cardBox {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+  margin-bottom: 10vh;
 }
-.card{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor:pointer;
-    border-style: solid;
-    font-weight: 600;
-    background-color: white;
-    color: black;
-    font-size: 22px;
-    user-select: none;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
-    overflow:hidden;
-    margin: 0 10px 0 10px;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-style: solid;
+  font-weight: 600;
+  background-color: white;
+  color: black;
+  font-size: 22px;
+  user-select: none;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+.flip-card-container {
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  display: flex;
+  justify-content: center;
+}
+.flip-card-container.is-flipped {
+  transform: rotateY(180deg);
+}
+.flip-card {
+  position: absolute;
+  backface-visibility: hidden;
+  max-width: fit-content;
+  max-height: max-content;
+}
+.flip-card--back {
+  transform: rotateY(180deg);
+  background: white;
 }
 .card-back {
-    background: repeating-linear-gradient( 45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 25px);
+  background: repeating-linear-gradient(
+    45deg,
+    #444cf7,
+    #444cf7 5px,
+    #e5e5f7 5px,
+    #e5e5f7 25px
+  );
 }
-.card-match{
-    width:190px;
-    height:260px;
-    max-width:35vw;
-    max-height:20vh;
+.flip-card-container,
+.card-match {
+  width: 190px;
+  height: 260px;
+  max-width: 35vw;
+  max-height: 20vh;
 }
-.card-hand{
-    width: 150px;
-    height: 200px;
-    max-width:25vw;
-    max-height:15vh;
+.countdown {
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  align-self: center;
+  z-index: 9;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.card-image{
-    display:flex;
-    object-fit: fill;
-    justify-content: center;
-    align-items: center;
+#countdown {
+  visibility: hidden;
 }
-.rockImage{
-    max-width:100%;
-    max-height:100%;
+.card-hand {
+  width: 150px;
+  height: 200px;
+  max-width: 25vw;
+  max-height: 15vh;
+  margin: 0 10px 0 10px;
 }
-.paperImage{
-    max-width:100%;
-    max-height:80%;
+.card-image {
+  display: flex;
+  object-fit: fill;
+  justify-content: center;
+  align-items: center;
 }
-.scissorsImage{
-    max-width:100%;
-    max-height:70%;
+.rockImage {
+  max-width: 100%;
+  max-height: 100%;
 }
-.myHand, .opponentHand{
-    margin-left: 40px;
-    font-weight: 900;
-    font-size: 20px;
-    color:Yellow;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+.paperImage {
+  max-width: 100%;
+  max-height: 80%;
 }
-.game-log{
-    display:flex;
-    font-size: 20px;
-    flex-direction: column;
-    padding:20px;
-    width:100%;
-    max-width: 600px;
-    background-color: white;
-    border: solid 0.1rem rgb(0, 0, 0);
-    margin-bottom: 10vh;
+.scissorsImage {
+  max-width: 100%;
+  max-height: 70%;
+}
+.myHand,
+.opponentHand {
+  margin-left: 40px;
+  font-weight: 900;
+  font-size: 20px;
+  color: Yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.game-log {
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border: solid 0.1rem rgb(0, 0, 0);
+  margin-bottom: 10vh;
 }
 
 /* @media only screen and (min-width:1000px){
     .container{
     }
 } */
-@media (max-width: 800px){
-    .title{
-        font-size: 10px;
-    }
-    .matchSelection h6{
-        display: none;
-    }
-    .matchSelection button{
-        font-size: 14px;
-        width:30px;
-    }
-    .card{
-        font-size: 18px;
-    }
+@media (max-width: 800px) {
+  .match-cards-container {
+    column-gap: 5vw;
+  }
+  .countdown{
+    top:37%;
+  }
+  .title {
+    font-size: 10px;
+  }
+  .matchSelection h6 {
+    display: none;
+  }
+  .matchSelection button {
+    font-size: 14px;
+    width: 30px;
+  }
+  .card {
+    font-size: 18px;
+  }
 }

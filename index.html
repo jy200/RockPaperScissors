@@ -30,12 +30,35 @@
         <div class="match-cards-container">
             <div class="match-card-container">
                 <h3>You</h3>
-                <div id="match-card-1" class="card card-back card-match"></div>
+                <div class="flip-card-container">
+                    <div class="flip-card flip-card--front">
+                        <div id="match-card-1" class="card card-back card-match"></div>
+                    </div>
+                    <div class="flip-card flip-card--back">
+                        <div class="card card-match">
+                            <img class="rockImage" src="images/rock.png"/>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="countdown"><h1 id="countdown">0</h1></div>
             <div class="match-card-container">
                 <h3>Opponent</h3>
-                <div id="match-card-2" class="card card-back card-match"></div>
+                <div class="flip-card-container">
+                    <div class="flip-card flip-card--front">
+                        <div id="match-card-2" class="card card-back card-match"></div>
+                    </div>
+                    <div class="flip-card flip-card--back">
+                        <div class="card card-match">
+                            <img class="rockImage" src="images/rock.png"/>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- <div class="match-card-container">
+                <h3>Opponent</h3>
+                <div id="match-card-2" class="card card-back card-match"></div>
+            </div> -->
         </div>
 
         <div class="cardBox">
@@ -70,6 +93,7 @@
             <!-- <div id="gameResult">Result: </div> -->
         </div>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="test.js"></script>
 </body>
 </html>
