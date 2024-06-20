@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
-    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
 </head>
+
 <body class="pattern">
-    <div class="stats"><button><h3 class="stats-text">Stats</h3></button></div>
+    <div id="stats-btn" class="stats"><button>
+            <h3 class="stats-text">Stats</h3>
+        </button></div>
     <div class="container">
         <div class="title">
-            <h1 >ULTIMATE ROCK PAPER SCISSORS</h1>
-            <div class="scoreboard">
-                0/0
+            <h1>ULTIMATE ROCK PAPER SCISSORS</h1>
+            <div class="scoreboard"> Round(s) Left:
             </div>
             <div class="matchSelection">
                 <h6>Rounds</h6>
@@ -37,24 +40,28 @@
                     </div>
                     <div class="flip-card flip-card--back">
                         <div class="card card-match">
-                            <img id="match-card-img-1" class="rockImage" src="images/rock.png"/>
+                            <img id="match-card-img-1" class="rockImage" src="images/rock.png" />
                         </div>
                     </div>
                 </div>
+                <h3 id="your-wins">0</h3>
             </div>
-            <div class="countdown"><h1 id="countdown">0</h1></div>
+            <div class="countdown">
+                <h1 id="countdown">0</h1>
+            </div>
             <div class="match-card-container">
-                <h3>Opponent</h3>
+                <h3>Computer</h3>
                 <div id="match-card-2" class="flip-card-container">
                     <div class="flip-card flip-card--front">
                         <div class="card card-back card-match"></div>
                     </div>
                     <div class="flip-card flip-card--back">
                         <div class="card card-match">
-                            <img id="match-card-img-2" class="rockImage" src="images/rock.png"/>
+                            <img id="match-card-img-2" class="rockImage" src="images/rock.png" />
                         </div>
                     </div>
                 </div>
+                <h3 id="computer-wins">0</h3>
             </div>
         </div>
         <p id="round-text"></p>
@@ -62,32 +69,39 @@
             <div id="rock" class="card card-hand">
                 ROCK
                 <div class="card-image">
-                    <img class="rockImage" src="images/rock.png"/>
+                    <img class="rockImage" src="images/rock.png" />
                 </div>
             </div>
             <div id="paper" class="card card-hand">
                 PAPER
-                <div class="card-image"><img class="paperImage" src="images/paper.png"/></div>
+                <div class="card-image"><img class="paperImage" src="images/paper.png" /></div>
             </div>
             <div id="scissors" class="card card-hand">
                 SCISSORS
-                <div class="card-image"><img class="scissorsImage" src="images/scissors.png"/></div>
+                <div class="card-image"><img class="scissorsImage" src="images/scissors.png" /></div>
             </div>
         </div>
         <div class="game-log">
             <div id="win">Win: 0</div>
             <div id="lose">Lose: 0</div>
             <div id="draw">Draw: 0</div>
-
-            <!-- <div id="gameResult">Result: </div> -->
         </div>
-        <div class="stat-log">
-            <div id="rockPlayed">Times Rock was played: 0</div>
-            <div id="paperPlayed">Times Paper was played: 0</div>
-            <div id="scissorsPlayed">Times Scissors was played: 0</div>
+        <div id="stat-log" class="stat-log">
+            <div class="stat-text">
+                <h1>Summary</h1>
+                <div id="rockPlayed"></div>
+                <div id="paperPlayed"></div>
+                <div id="scissorsPlayed"></div>
+                <div id="roundWins"></div>
+                <div id="roundDefeats"></div>
+                <div id="roundWins"></div>
+                <div id="totalWins"></div>
+                <div id="totalDefeats"></div>
+                <div id="totalDraws"></div>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
-    <!-- <script src="test.js"></script> -->
 </body>
+
 </html>
