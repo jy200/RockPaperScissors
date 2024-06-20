@@ -13,3 +13,6 @@ Features:
   - Player and Computer cards flip after 3 seconds (timer)
   - Score and text changes
 - Statistics summary where the player can check how many times they have won/lost/drew through clicking the [Stats] button 
+- Mobile screen resizing
+
+![Demo](/images/input.gif)
